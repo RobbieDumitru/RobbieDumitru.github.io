@@ -14,14 +14,9 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: none;
-    color: #3863DF;
+    color: #999;
     white-space: nowrap;
     text-decoration-line: none;
-}
-a:link {
-  color: green;
-  background-color: transparent;
-  text-decoration: none;
 }
 a:hover {
     text-decoration: underline;
