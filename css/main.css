@@ -18,6 +18,11 @@ a {
     white-space: nowrap;
     text-decoration-line: none;
 }
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
 a:hover {
     text-decoration: underline;
 }
@@ -50,4 +55,5 @@ ul.posts li {
 }
 .bigFont li{
 font-size: 1.5em;
+line-height: 1.4em;
 }
