@@ -1,7 +1,47 @@
 body {
+  margin: 60px auto;
+  width: 90%;
+  color: #222;
+  background: #fff;
+  font: 100% system-ui;
+}
+a {
+  color: #0033cc;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #121212;
+  }
+
+  body a {
+    color: #999; /*809fff*/
+  }
+  body h2 {
+    border-bottom: 1px solid white;
+    font-size: 2.5em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  }
+  body p {
+    font-size: 1.5em;
+    line-height: 1.4em;
+    color: #ffffff;
+  }
+}
+/*
+body {
     margin: 60px auto;
     width: 77%;
+    background-color: white;
+    color: black;
 }
+.dark-mode {
+  background-color: black;
+  color: white;
+}*/
+
+
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
