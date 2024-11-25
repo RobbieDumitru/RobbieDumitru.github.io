@@ -81,7 +81,7 @@ body {
     }
 
     .profile-info {
-        text-align: center; /* Optional: Center-align text for better readability */
+        text-align: left; /* Optional: Center-align text for better readability */
         margin-top: 20px !important; /* Remove any top margin */
     }
     .profile-info p {
