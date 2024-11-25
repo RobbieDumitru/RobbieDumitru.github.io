@@ -54,14 +54,60 @@ body {
   color: white;
 }*/
 
-@media (max-width: 768px) { /* For devices with a screen width of 768px or less */
+@media (max-width: 860px) { /* For devices with a screen width of 768px or less */
     body {
         margin: 0; /* Remove auto margin for full-width layout */
         width: 95vw; /* Make the body take up the full width of the screen */
         padding: 0 10px; /* Optional: Add some padding for better readability */
     }
+    body p {
+      font-size: 1.1em;
+      line-height: 1.3em;
+    }
+    .profile-container {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center the items */
+        gap: 0 !important;
+    }
+
+    .profile-header {
+        margin-bottom: 0px; /* Add spacing below the profile-header */
+    }
+
+    .profile-info {
+        text-align: center; /* Optional: Center-align text for better readability */
+        margin-top: 20px !important; /* Remove any top margin */
+    }
+    .profile-info p {
+      margin-top: 0; /* Remove any top margin */
+    }
+    ul.posts li {
+      list-style: none;
+    }
+    .bigFont li{
+      font-size: 1.0em !important;       /* 1.5 */
+    }
+
+
+    
+    li span[style*="float:right;"] {
+      float: none !important;
+      display: block;
+      margin-top: 0px;
+      text-align: left;
+      margin-bottom: 0px;
+      top: 0 !important;
+    }
+
 }
 
+
+
+li span[style*="float:right;"] {
+  float: right; /* Keeps the span aligned to the right */
+  position: relative; /* Enables adjustment of position */
+  top: -2.8em; /* Moves the span upwards by approximately two lines */
+}
 
 nav ul, footer ul {
     font-size: 0.8em;   /* 1.5 */
