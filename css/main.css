@@ -1,6 +1,7 @@
 body {
-  margin: 60px auto;
+  margin: 55px auto;
   width: 61.8%;
+  max-width: 95%;
   color: #222;
   background: #fff;
   font: 100% system-ui;
@@ -23,7 +24,7 @@ a {
   }
   body h2 {
     border-bottom: 1px solid white;
-    font-size: 2em;
+    font-size: 1.3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
   }
   body p {
@@ -39,6 +40,8 @@ a {
     filter: invert(100%);
   }
 }
+
+
 /*
 body {
     margin: 60px auto;
@@ -50,6 +53,14 @@ body {
   background-color: black;
   color: white;
 }*/
+
+@media (max-width: 768px) { /* For devices with a screen width of 768px or less */
+    body {
+        margin: 0; /* Remove auto margin for full-width layout */
+        width: 95vw; /* Make the body take up the full width of the screen */
+        padding: 0 10px; /* Optional: Add some padding for better readability */
+    }
+}
 
 
 nav ul, footer ul {
@@ -81,7 +92,7 @@ h1 {
 }
 h2 {
     border-bottom: 1px solid black;
-    font-size: 2em;         /* 2 */
+    font-size: 1.3em;         /* 2 */
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
@@ -103,7 +114,7 @@ ul.posts li {
     list-style: none;
 }
 .bigFont li{
-font-size: 1.2em;       /* 1.5 */
+font-size: 1.1em;       /* 1.5 */
 line-height: 1.4em;
 }
 
@@ -111,3 +122,65 @@ ul {
   list-style-type: none;
   padding: 0;
 }
+
+img.circular {
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image fills the circle properly */
+}
+
+
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 55px;
+    align-items: center;
+    margin-bottom: 30px; /* Reduce space below the profile section */
+    margin-top: 20px;
+}
+
+.profile-info {
+    flex: 1;
+    margin-top: 30px; /* Add space above profile-info to drop it down */
+
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+    margin: 20px auto;
+    margin-bottom: 0px; /* Reduce space below the profile section */
+}
+
+.profile-header img {
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
+
+.profile-header h1 {
+    margin-top: 10px; /* Add spacing between the image and text */
+    font-size: 1.5em; /* Adjust font size */
+    margin-bottom: 5px; /* Reduce space below the profile section */
+}
+
+.profile-header ul {
+    display: flex; /* Aligns items horizontally */
+    list-style-type: none; /* Removes the default list bullets */
+    padding: 0; /* Removes any default padding */
+    margin: 0; /* Removes any default margin */
+    gap: 10px; /* Adds space between the icons */
+}
+
+.profile-header li {
+    display: inline-block; /* Ensures the <li> items are aligned in a row */
+}
+
+/*
+.profile-header img {
+    height: 1.5em; /* Adjust icon size as needed *
+    vertical-align: middle; /* Aligns the icons vertically in the center *
+}*/

@@ -18,8 +18,23 @@
 		</nav> -->
 		<div class="container">
     		<div class="blurb">
-        		<h1>Robbie D.<span style="float:right; margin: 10px;"> <img src="/images/mug.jpg" style="height:4em;" alt="[Me]"> </span></h1><!--<h1 align="right">Image to go here</h1>-->
-				<p>I am a PhD student at <a href="https://www.ruhr-uni-bochum.de/en">Ruhr University Bochum</a> and <a href="https://www.adelaide.edu.au/">The University of Adelaide</a>.<br> In 2020, I earned a B.Eng. (Honours) in Electrical and Electronic Engineering, and a B.Sc. in Mathematical and Computer Sciences from The University of Adelaide.</p>
+        		<div class="profile-container">
+				    <div class="profile-header">
+				        <img src="mug.jpg" alt="[Me]" style="height:10em;" class="circular">
+				        <h1>Robbie Dumitru</h1>
+				        <ul>
+				        	<li><a href="mailto:robert.dumitru@rub.de"> <img class="invert_effect" src="emailpng.png" style="height:1.6em;" alt="[Email Icon]"></a></li>
+							<li><a href="https://dblp.uni-trier.de/pid/251/5347-2.html"> <img src="dblp.png" style="height:1.3em;" alt="[dblp Icon]"></a></li>
+				         <li><a href="https://scholar.google.com.au/citations?user=70aLW-kAAAAJ&hl=en"><img src="scholar.png" style="height:1.3em;" alt="[Google Scholar Logo]"></a></li>
+							<li><a href="https://www.linkedin.com/in/robbie-dumitru/"><img src="linkedin-logo.png" style="height:1.3em;" alt="[LinkedIn Logo]"></a> </li>
+							<li><a href="https://orcid.org/0000-0001-5605-8082"><img src="ORCID.png" style="height:1.3em;" alt="[ORCID Logo]"></a> </li>
+							<li><a href="https://x.com/RobbieDumitru"><img class="invert_effect" src="xlogo.png" style="height:1.1em;" alt="[X Logo]"></a> </li>			
+							</ul>
+				    </div>
+				    <div class="profile-info">
+				        <p>I am a PhD student at <a href="https://www.ruhr-uni-bochum.de/en">Ruhr University Bochum</a> and <a href="https://www.adelaide.edu.au/">The University of Adelaide</a>. In 2020, I earned a B.Eng. (Honours) in Electrical and Electronic Engineering, and a B.Sc. in Mathematical and Computer Sciences from The University of Adelaide.</p></p>
+				    </div>
+				</div>
             <h2>Research</h2>
             <p> <ul class="bigFont"><li>
                <b><a href="https://arxiv.org/abs/2307.09001" class="no-color-change">On Borrowed Time &#8212; Preventing Static Side-Channel Analysis</a></b> <br>
@@ -42,13 +57,20 @@
 		</div><!-- /.container -->
 		<footer>
     		<ul>
-        	<li><a href="mailto:robert.dumitru@rub.de"> <img class="invert_effect" src="/images/email-icon.png" style="height:1em;" alt="[Email Icon]"> Contact email</a></li>
-			<li><a href="https://dblp.uni-trier.de/pid/251/5347-2.html"> <img src="/images/dblp.png" style="height:1em;" alt="[dblp Icon]"> dblp</a></li>
-         <li><a href="https://scholar.google.com.au/citations?user=70aLW-kAAAAJ&hl=en"><img src="/images/scholar.png" style="height:1em;" alt="[Google Scholar Logo]"> Google Scholar</a></li>
-			<li><a href="https://www.linkedin.com/in/robbie-dumitru/"><img src="/images/linkedin-logo.png" style="height:1em;" alt="[LinkedIn Logo]"> LinkedIn</a> </li>
-			<li><a href="https://orcid.org/0000-0001-5605-8082"><img src="/images/ORCID.png" style="height:1em;" alt="[ORCID Logo]"> ORCiD</a> </li>			
 			<span style="float:right; font-weight:normal;"><em>Last updated November 2024</em></span>
 			</ul>
 		</footer>
+		<script>
+	    	function setWidth() {
+	        const screenWidth = window.screen.width; // Get the device screen width
+	        const websiteWidth = Math.min(screenWidth * 0.618, screenWidth); // 61.8% of screen width
+	        document.body.style.width = `${websiteWidth}px`; // Set the width in pixels
+	        document.body.style.margin = "0 auto"; // Center the website
+	    	}
+
+	    	// Set the width on page load and when the window is resized
+	    	window.addEventListener("load", setWidth);
+	    	window.addEventListener("resize", setWidth);
+		</script>
 	</body>
 </html>
