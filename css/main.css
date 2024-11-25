@@ -1,7 +1,7 @@
 body {
-  margin: 55px auto;
-  width: 61.8%;
-  max-width: 95%;
+  margin: 3% auto;
+  width: 95%;
+  max-width: none;
   color: #222;
   background: #fff;
   font: 100% system-ui;
@@ -56,9 +56,15 @@ body {
 
 @media (max-width: 860px) { /* For devices with a screen width of 768px or less */
     body {
-        margin: 0; /* Remove auto margin for full-width layout */
+        margin: 0 auto; /* Remove auto margin for full-width layout */
         width: 95vw; /* Make the body take up the full width of the screen */
-        padding: 0 10px; /* Optional: Add some padding for better readability */
+/*        padding: 0 10px;  Optional: Add some padding for better readability */
+    }
+    
+    .container {
+      width: 95%;
+      max-width: none;
+      margin: 0 auto;
     }
     body p {
       font-size: 1.1em;
