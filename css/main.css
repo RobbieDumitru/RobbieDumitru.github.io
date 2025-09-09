@@ -41,6 +41,10 @@ a {
   }
 }
 
+.icon {
+  height: 25px;       /* set just one dimension so it scales proportionally */
+  vertical-align: -8px; /* nudges the icon lower than the baseline */
+}
 
 /*
 body {
@@ -241,3 +245,59 @@ img.circular {
     height: 1.5em; /* Adjust icon size as needed *
     vertical-align: middle; /* Aligns the icons vertically in the center *
 }*/
+
+.hover-tooltip {
+  position: relative;
+}
+
+.hover-tooltip::after {
+  content: "Equal contributions as first author";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1F51FF;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 0.9em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.hover-tooltip:hover::after {
+  opacity: 1;
+}
+
+.hidden-publication {
+  display: none;
+}
+
+.h2-style-button {
+  font-size: 1.1em;
+  font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+  font-weight: normal; /* bold; */
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  border-bottom: none; /* 1px solid black; */
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  display: inline-block;
+}
+
+@media (prefers-color-scheme: dark) {
+  .h2-style-button {
+    color: #eee;
+    border-bottom: none; /* 1px solid white; */
+  }
+}
+
+.h2-style-button:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
