@@ -105,27 +105,39 @@ body {
       position: static !important;
       float: none !important;
       display: block;
-      margin-top: 0px;
+      margin-top: 0.25em;
       text-align: left;
       margin-bottom: 0px;
       top: auto !important;
     }
 
+      /* allow title to wrap naturally on small screens */
+    .bigFont li > b {
+      white-space: normal !important;
+    }
+
 }
 
+/* DESKTOP: keep actions aligned with the title and stop stealing line width */
+@media (min-width: 861px) {
+  /* make each item a containing block for absolute positioning */
+  .bigFont li {
+    position: relative;
+  }
 
-/* make each pub item a positioning context and leave space on the right */
-.bigFont li {
-  position: relative;
-  padding-right: 22ch; /* space for [ preprint | talk | code ], tweak as needed */
-}
+  /* RIGHT ACTIONS: pin to the top-right, no float */
+  li span[style*="float:right;"] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    float: none;
+  }
 
-/* pin the right-hand span to the top-right so it aligns with the title line */
-li span[style*="float:right;"] {
-  position: absolute;
-  right: 0;
-  top: 0;
-  float: none;       /* neutralize the inline float */
+  /* TITLE: never wrap on desktop */
+  .bigFont li > b {
+    white-space: nowrap;
+    display: inline-block;
+  }
 }
 
 nav ul, footer ul {
