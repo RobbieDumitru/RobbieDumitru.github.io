@@ -96,27 +96,36 @@ body {
     }
     .bigFont li{
       font-size: 1.0em !important;       /* 1.5 */
+      padding-right: 0;        /* release the reserved space on phones/tablets */
     }
 
 
     
     li span[style*="float:right;"] {
+      position: static !important;
       float: none !important;
       display: block;
       margin-top: 0px;
       text-align: left;
       margin-bottom: 0px;
-      top: 0 !important;
+      top: auto !important;
     }
 
 }
 
 
+/* make each pub item a positioning context and leave space on the right */
+.bigFont li {
+  position: relative;
+  padding-right: 22ch; /* space for [ preprint | talk | code ], tweak as needed */
+}
 
+/* pin the right-hand span to the top-right so it aligns with the title line */
 li span[style*="float:right;"] {
-  float: right; /* Keeps the span aligned to the right */
-  position: relative; /* Enables adjustment of position */
-  top: -2.8em; /* Moves the span upwards by approximately two lines */
+  position: absolute;
+  right: 0;
+  top: 0;
+  float: none;       /* neutralize the inline float */
 }
 
 nav ul, footer ul {
