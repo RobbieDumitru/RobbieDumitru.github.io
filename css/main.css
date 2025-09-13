@@ -1,3 +1,10 @@
+/* ---------- Global ---------- */
+
+:root {
+  /* controls the vertical gap between publication <li>s */
+  --pub-gap: 1.2em;
+}
+
 body {
   margin: 55px auto;
   width: 61.8%;
@@ -6,289 +13,143 @@ body {
   background: #fff;
   font: 100% system-ui;
 }
-a {
-  color: #0033cc;
-}
-  a.no-color-change {
-    color: inherit;
-  }
+
+a { color: #0033cc; }
+a.no-color-change { color: inherit; }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    color: #eee;
-    background: #121212;
-  }
-
-  body a {
-    color: #999; /*809fff*/
-  }
+  body { color: #eee; background: #121212; }
+  body a { color: #999; /* 809fff */ }
   body h2 {
     border-bottom: 1px solid white;
     font-size: 1.3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-family: 'Helvetica','Arial','Sans-Serif';
   }
   body p {
     font-size: 1.26em;
     line-height: 1.4em;
-    color: #ffffff;
+    color: #fff;
   }
-  body footer {
-    border-top: 1px solid white; /*#d5d5d5;*/
-    font-size: 1em;
-  }
-  .invert_effect {
-    filter: invert(100%);
-  }
+  body footer { border-top: 1px solid white; font-size: 1em; }
+  .invert_effect { filter: invert(100%); }
 }
 
 .icon {
-  height: 25px;       /* set just one dimension so it scales proportionally */
-  vertical-align: -8px; /* nudges the icon lower than the baseline */
+  height: 25px;             /* set just one dimension so it scales proportionally */
+  vertical-align: -8px;     /* nudge icon lower than the baseline */
 }
 
-/*
-body {
-    margin: 60px auto;
-    width: 77%;
-    background-color: white;
-    color: black;
-}
-.dark-mode {
-  background-color: black;
-  color: white;
-}*/
-
-@media (max-width: 860px) {
-  /* Layout */
-  body {
-    margin: 0 auto;                 /* full-width layout */
-    width: 95vw !important;
-  }
-  .container {
-    width: 95%;
-    max-width: none;
-    margin: 0 auto;
-  }
-
-  /* Typography tweaks for small screens */
-  body p {
-    font-size: 1.1em;
-    line-height: 1.3em;
-  }
-
-  /* Profile section stacking */
-  .profile-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0 !important;
-  }
-  .profile-header {
-    margin-bottom: 0;
-  }
-  .profile-info {
-    text-align: left;
-    margin-top: 20px !important;
-  }
-  .profile-info p {
-    margin-top: 0;
-  }
-
-  /* Lists */
-  ul.posts li {
-    list-style: none;
-  }
-
-  /* Publication items: full width text, consistent spacing */
-  .bigFont li {
-    font-size: 1.0em !important;    /* was 1.5 */
-    padding-right: 0 !important;    /* release any reserved right space */
-    margin-bottom: 0.75em;          /* consistent gap between papers */
-  }
-  .bigFont li:last-child {
-    margin-bottom: 0;               /* no extra space after final item */
-  }
-
-  /* RIGHT ACTIONS: block below, tight top margin, no bottom margin */
-  li span[style*="float:right;"] {
-    position: static !important;
-    float: none !important;
-    display: block !important;
-    text-align: left;
-    top: auto !important;
-    margin-top: 0.1em;              /* tighter than 0.25em */
-    margin-bottom: 0 !important;
-  }
-
-  /* Prevent any inner element from adding extra trailing space */
-  .bigFont li > *:last-child {
-    margin-bottom: 0 !important;
-  }
-
-  /* Slightly tighter paragraph spacing inside items */
-  .bigFont li p {
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
-  }
-
-  /* Titles can wrap on small screens */
-  .bigFont li > b {
-    white-space: normal !important;
-  }
-}
-
-/* DESKTOP: keep actions aligned with the title and stop stealing line width */
-@media (min-width: 861px) {
-  /* make each item a containing block for absolute positioning */
-  .bigFont li {
-    position: relative;
-  }
-
-  /* RIGHT ACTIONS: pin to the top-right, no float */
-  li span[style*="float:right;"] {
-    position: absolute;
-    right: 0;
-    top: 0;
-    float: none;
-  }
-
-  /* TITLE: never wrap on desktop */
-  .bigFont li > b {
-    white-space: nowrap;
-    display: inline-block;
-  }
-}
+/* ---------- Navigation / headings / text ---------- */
 
 nav ul, footer ul {
-    font-size: 0.8em;   /* 1.5 */
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 0px;
-    list-style: none;
-    font-weight: bold;
+  font-size: 0.8em;
+  font-family: 'Helvetica','Arial','Sans-Serif';
+  padding: 0;
+  list-style: none;
+  font-weight: bold;
 }
-nav ul li, footer ul li {
-    display: inline;
-    margin-right: 20px;
-}
+nav ul li, footer ul li { display: inline; margin-right: 20px; }
+
 a {
-    text-decoration: none;
-    color: #999;
-    white-space: normal;
-    text-decoration-line: none;
+  text-decoration: none;
+  color: #999;
+  white-space: normal;
+  text-decoration-line: none;
 }
-a:hover {
-    text-decoration: underline;
-}
-  a.no-color-change {
-    color: inherit;
-  }
+a:hover { text-decoration: underline; }
+a.no-color-change { color: inherit; }
+
 h1 {
-    font-size: 2.5em;       /* 3 */
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  font-size: 2.5em;
+  font-family: 'Helvetica','Arial','Sans-Serif';
 }
 h2 {
-    border-bottom: 1px solid black;
-    font-size: 1.3em;         /* 2 */
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  border-bottom: 1px solid black;
+  font-size: 1.3em;
+  font-family: 'Helvetica','Arial','Sans-Serif';
 }
 p {
-    font-size: 1.26em;   /* 1.5 */
-    line-height: 1.4em;
-    color: #333;
+  font-size: 1.26em;
+  line-height: 1.4em;
+  color: #333;
 }
+
 footer {
-    border-top: 1px solid black; /*#d5d5d5;*/
-    font-size: 1em;
-    padding: 0px 0; /* Adds padding inside the footer */
-    margin-top: 0px; /*20px; */
-    margin-bottom: 50px; /* Ensures there's space between the footer and the bottom of the page */
-    text-align: center; /* Centers the footer content */
+  border-top: 1px solid black;
+  font-size: 1em;
+  padding: 0 0;
+  margin-top: 0;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
+/* ---------- Lists ---------- */
 
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
-}
+ul { list-style-type: none; padding: 0; }
 
-ul.posts li {
-    list-style: none;
-}
-.bigFont li{
-font-size: 1.1em;       /* 1.5 */
-line-height: 1.4em;
-}
+ul.posts { margin: 20px auto 40px; font-size: 1.5em; }
+ul.posts li { list-style: none; }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+/* Publications list base styles (apply at all widths) */
+.bigFont { margin: 0; padding: 0; }
+.bigFont li {
+  font-size: 1.1em;         /* keep your original scale */
+  line-height: 1.4em;
+  position: relative;        /* for desktop absolute actions */
+  margin: 0 0 var(--pub-gap);/* uniform gap between papers */
 }
+.bigFont li:last-child { margin-bottom: 0; }
+
+/* Make sure the last child inside a pub item doesn't add trailing space */
+.bigFont li > *:last-child { margin-bottom: 0 !important; }
+
+/* ---------- Profile ---------- */
 
 img.circular {
-    border-radius: 50%; /* Make the image circular */
-    object-fit: cover; /* Ensure the image fills the circle properly */
+  border-radius: 50%;
+  object-fit: cover;
 }
-
-
 
 .profile-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 55px;
-    align-items: center;
-    margin-bottom: 30px; /* Reduce space below the profile section */
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 55px;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
-
 .profile-info {
-    flex: 1;
-    margin-top: 30px; /* Add space above profile-info to drop it down */
-
+  flex: 1;
+  margin-top: 30px;
 }
-
 .profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-shrink: 0;
-    margin: 20px auto;
-    margin-bottom: 0px; /* Reduce space below the profile section */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+  margin: 20px auto;
+  margin-bottom: 0;
 }
-
-.profile-header img {
-    display: block;
-    margin: 0 auto; /* Center the image */
-}
-
+.profile-header img { display: block; margin: 0 auto; }
 .profile-header h1 {
-    margin-top: 10px; /* Add spacing between the image and text */
-    font-size: 1.5em; /* Adjust font size */
-    margin-bottom: 5px; /* Reduce space below the profile section */
+  margin-top: 10px;
+  font-size: 1.5em;
+  margin-bottom: 5px;
 }
-
 .profile-header ul {
-    display: flex; /* Aligns items horizontally */
-    list-style-type: none; /* Removes the default list bullets */
-    padding: 0; /* Removes any default padding */
-    margin: 0; /* Removes any default margin */
-    gap: 10px; /* Adds space between the icons */
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
 }
+.profile-header li { display: inline-block; }
 
-.profile-header li {
-    display: inline-block; /* Ensures the <li> items are aligned in a row */
-}
+/* ---------- Tooltips, utility, etc. ---------- */
 
-/*
-.profile-header img {
-    height: 1.5em; /* Adjust icon size as needed *
-    vertical-align: middle; /* Aligns the icons vertically in the center *
-}*/
-
-.hover-tooltip {
-  position: relative;
-}
-
+.hover-tooltip { position: relative; }
 .hover-tooltip::after {
   content: "Equal contributions as first author";
   position: absolute;
@@ -306,37 +167,90 @@ img.circular {
   transition: opacity 0.3s ease;
   z-index: 10;
 }
+.hover-tooltip:hover::after { opacity: 1; }
 
-.hover-tooltip:hover::after {
-  opacity: 1;
-}
-
-.hidden-publication {
-  display: none;
-}
+.hidden-publication { display: none; }
 
 .h2-style-button {
   font-size: 1.1em;
-  font-family: 'Helvetica', 'Arial', 'Sans-Serif';
-  font-weight: normal; /* bold; */
+  font-family: 'Helvetica','Arial','Sans-Serif';
+  font-weight: normal;
   border: none;
   background: none;
   cursor: pointer;
   padding: 0;
-  border-bottom: none; /* 1px solid black; */
+  border-bottom: none;
   margin-top: 1em;
   margin-bottom: 0.5em;
   display: inline-block;
 }
-
 @media (prefers-color-scheme: dark) {
-  .h2-style-button {
-    color: #eee;
-    border-bottom: none; /* 1px solid white; */
+  .h2-style-button { color: #eee; border-bottom: none; }
+}
+.h2-style-button:hover { text-decoration: underline; opacity: 0.8; }
+
+/* ---------- Desktop (≥ 861px) ---------- */
+/* Keep actions aligned with title; prevent title wrapping; preserve full width for the line */
+@media (min-width: 861px) {
+  /* Right-hand actions: pin to top-right; do not steal line width */
+  li span[style*="float:right;"] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    float: none;
+  }
+
+  /* Titles never wrap on desktop */
+  .bigFont li > b {
+    white-space: nowrap;
+    display: inline-block;
   }
 }
 
-.h2-style-button:hover {
-  text-decoration: underline;
-  opacity: 0.8;
+/* ---------- Mobile (≤ 860px) ---------- */
+
+@media (max-width: 860px) {
+  /* Layout */
+  body { margin: 0 auto; width: 95vw !important; }
+  .container { width: 95%; max-width: none; margin: 0 auto; }
+
+  /* Typography tweaks for small screens */
+  body p { font-size: 1.1em; line-height: 1.3em; }
+
+  /* Profile stacking */
+  .profile-container { flex-direction: column; align-items: center; gap: 0 !important; }
+  .profile-header { margin-bottom: 0; }
+  .profile-info { text-align: left; margin-top: 20px !important; }
+  .profile-info p { margin-top: 0; }
+
+  ul.posts li { list-style: none; }
+
+  /* Publications: full-width text, same gap as desktop via --pub-gap */
+  .bigFont li {
+    font-size: 1.0em !important;    /* your mobile scale */
+    padding-right: 0 !important;     /* no reserved right gutter */
+    margin: 0 0 var(--pub-gap);      /* SAME visual spacing as before */
+    line-height: 1.4em;
+  }
+  .bigFont li:last-child { margin-bottom: 0; }
+
+  /* Actions drop below */
+  li span[style*="float:right;"] {
+    position: static !important;
+    float: none !important;
+    display: block !important;
+    text-align: left;
+    top: auto !important;
+    margin-top: 0.1em;               /* compact */
+    margin-bottom: 0 !important;
+  }
+
+  /* Prevent inner trailing margins from adding extra space */
+  .bigFont li > *:last-child { margin-bottom: 0 !important; }
+
+  /* Slightly tighter paragraph spacing inside items (if any) */
+  .bigFont li p { margin-top: 0.2em; margin-bottom: 0.2em; }
+
+  /* Titles can wrap on small screens */
+  .bigFont li > b { white-space: normal !important; }
 }
