@@ -259,3 +259,9 @@ img.circular {
 .bigFont + footer {
   margin-top: var(--pub-gap);
 }
+
+/* make the gap below the list match the gap between items */
+.bigFont {
+  margin: 0 0 0.75em;   /* bottom margin = item gap */
+  padding: 0;
+}
