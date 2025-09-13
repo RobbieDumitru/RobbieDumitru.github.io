@@ -254,3 +254,8 @@ img.circular {
   /* Titles can wrap on small screens */
   .bigFont li > b { white-space: normal !important; }
 }
+
+/* Ensure footer has the same gap above it as between publications */
+.bigFont + footer {
+  margin-top: var(--pub-gap);
+}
