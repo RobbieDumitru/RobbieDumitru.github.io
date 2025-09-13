@@ -58,64 +58,82 @@ body {
   color: white;
 }*/
 
-@media (max-width: 860px) { /* For devices with a screen width of 768px or less */
-    body {
-        margin: 0 auto; /* Remove auto margin for full-width layout */
-        width: 95vw !important; /* Make the body take up the full width of the screen */
-/*        padding: 0 10px;  Optional: Add some padding for better readability */
-    }
-    
-    .container {
-      width: 95%;
-      max-width: none;
-      margin: 0 auto;
-    }
-    body p {
-      font-size: 1.1em;
-      line-height: 1.3em;
-    }
-    .profile-container {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center the items */
-        gap: 0 !important;
-    }
+@media (max-width: 860px) {
+  /* Layout */
+  body {
+    margin: 0 auto;                 /* full-width layout */
+    width: 95vw !important;
+  }
+  .container {
+    width: 95%;
+    max-width: none;
+    margin: 0 auto;
+  }
 
-    .profile-header {
-        margin-bottom: 0px; /* Add spacing below the profile-header */
-    }
+  /* Typography tweaks for small screens */
+  body p {
+    font-size: 1.1em;
+    line-height: 1.3em;
+  }
 
-    .profile-info {
-        text-align: left; /* Optional: Center-align text for better readability */
-        margin-top: 20px !important; /* Remove any top margin */
-    }
-    .profile-info p {
-      margin-top: 0; /* Remove any top margin */
-    }
-    ul.posts li {
-      list-style: none;
-    }
-    .bigFont li{
-      font-size: 1.0em !important;       /* 1.5 */
-      padding-right: 0;        /* release the reserved space on phones/tablets */
-    }
+  /* Profile section stacking */
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0 !important;
+  }
+  .profile-header {
+    margin-bottom: 0;
+  }
+  .profile-info {
+    text-align: left;
+    margin-top: 20px !important;
+  }
+  .profile-info p {
+    margin-top: 0;
+  }
 
+  /* Lists */
+  ul.posts li {
+    list-style: none;
+  }
 
-    
-    li span[style*="float:right;"] {
-      position: static !important;
-      float: none !important;
-      display: block;
-      margin-top: 0.25em;
-      text-align: left;
-      margin-bottom: 0px;
-      top: auto !important;
-    }
+  /* Publication items: full width text, consistent spacing */
+  .bigFont li {
+    font-size: 1.0em !important;    /* was 1.5 */
+    padding-right: 0 !important;    /* release any reserved right space */
+    margin-bottom: 0.75em;          /* consistent gap between papers */
+  }
+  .bigFont li:last-child {
+    margin-bottom: 0;               /* no extra space after final item */
+  }
 
-      /* allow title to wrap naturally on small screens */
-    .bigFont li > b {
-      white-space: normal !important;
-    }
+  /* RIGHT ACTIONS: block below, tight top margin, no bottom margin */
+  li span[style*="float:right;"] {
+    position: static !important;
+    float: none !important;
+    display: block !important;
+    text-align: left;
+    top: auto !important;
+    margin-top: 0.1em;              /* tighter than 0.25em */
+    margin-bottom: 0 !important;
+  }
 
+  /* Prevent any inner element from adding extra trailing space */
+  .bigFont li > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Slightly tighter paragraph spacing inside items */
+  .bigFont li p {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+  }
+
+  /* Titles can wrap on small screens */
+  .bigFont li > b {
+    white-space: normal !important;
+  }
 }
 
 /* DESKTOP: keep actions aligned with the title and stop stealing line width */
