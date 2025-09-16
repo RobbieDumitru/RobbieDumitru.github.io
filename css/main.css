@@ -265,3 +265,9 @@ img.circular {
   margin: 0 0 0.75em;   /* bottom margin = item gap */
   padding: 0;
 }
+
+.empty-venue {
+  visibility: hidden;
+  display: block;
+  height: 1.4em; /* match your line-height */
+}
