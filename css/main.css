@@ -265,10 +265,3 @@ img.circular {
   margin: 0 0 0.75em;   /* bottom margin = item gap */
   padding: 0;
 }
-
-/* Always reserve vertical space for a conference line */
-.bigFont li::after {
-  content: "";
-  display: block;
-  height: 1.4em;   /* matches line-height of text */
-}
