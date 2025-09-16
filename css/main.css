@@ -207,9 +207,9 @@ img.circular {
   }
 }
 
-/* ---------- Mobile (≤ 860px) ---------- */
+/* ---------- Mobile (≤ 870px) ---------- */
 
-@media (max-width: 860px) {
+@media (max-width: 870px) {
   /* Layout */
   body { margin: 0 auto; width: 95vw !important; }
   .container { width: 95%; max-width: none; margin: 0 auto; }
@@ -270,4 +270,11 @@ img.circular {
   visibility: hidden;
   display: block;
   height: 1.4em; /* match your line-height */
+}
+
+/* On narrow screens, drop the dummy space entirely */
+@media (max-width: 870px) {
+  .empty-venue {
+    display: none;
+  }
 }
