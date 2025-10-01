@@ -1,22 +1,25 @@
 /* ---------- Global ---------- */
 
 :root {
-  /* controls the vertical gap between publication <li>s */
-  --pub-gap: 1.2em;
+  --pub-gap: 1.2em; /* gap between publication items */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  /* center horizontally */
-  margin: 0 auto;           /* was: 55px auto */
-  /* create the top gap without margin-collapse surprises */
-  padding-top: 55px;        /* moved from margin-top */
-
-  width: 61.8%;
+  margin: 0 auto;          /* center horizontally */
+  padding-top: 55px;       /* vertical spacing at top */
+  width: 61.8%;            /* fallback */
   max-width: 95%;
   color: #222;
   background: #fff;
   font: 100% system-ui;
 }
+
+/* ... keep the rest of your existing CSS unchanged ... */
 
 a { color: #0033cc; }
 a.no-color-change { color: inherit; }

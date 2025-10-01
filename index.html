@@ -125,5 +125,78 @@
         <span style="float:right; font-weight:normal;"><em>Last updated October 2025</em></span>
       </ul>
     </footer>
+
+<script>
+  // Symmetric, single flip point
+  const BASE_BP = 870; // stack at/under this width; unstack above it (unless overlap)
+
+  // Golden-ratio width based on the *screen* (CSS px), used only for desktop width
+  function goldenWidthPx() {
+    const sw = window.screen.width;
+    return Math.min(sw * 0.618, sw);
+  }
+
+  // Test if ANY item truly lacks room for its title + right span.
+  // We compare title's intrinsic width vs available space after the right span.
+  function anyOverlapIntrinsic() {
+    // ensure desktop state while measuring
+    document.body.classList.remove('stacked');
+
+    for (const li of document.querySelectorAll('.bigFont li')) {
+      const title = li.querySelector('b');
+      const span  = li.querySelector('span[style*="float:right;"]');
+      if (!title || !span) continue;
+
+      const liRect   = li.getBoundingClientRect();
+      const spanRect = span.getBoundingClientRect();
+      const cs       = getComputedStyle(li);
+      const padL = parseFloat(cs.paddingLeft)  || 0;
+      const padR = parseFloat(cs.paddingRight) || 0;
+
+      const available = liRect.width - spanRect.width - padL - padR - 4; // cushion
+      const needed    = title.scrollWidth; // intrinsic (no-wrap) width
+
+      if (needed > available) return true;
+    }
+    return false;
+  }
+
+  function applyLayout() {
+    const vw      = window.innerWidth;
+    const overlap = anyOverlapIntrinsic();
+
+    // Symmetric rule:
+    const shouldStack = (vw <= BASE_BP) || overlap;
+
+    if (shouldStack) {
+      document.body.classList.add('stacked');
+      // let CSS control full-width on mobile/stacked
+      document.body.style.width  = '';
+      document.body.style.margin = '';
+    } else {
+      document.body.classList.remove('stacked');
+      // desktop: fix width to screen's golden-ratio
+      const target = goldenWidthPx();
+      document.body.style.width  = target + 'px';
+      document.body.style.margin = '0 auto';
+    }
+  }
+
+  // Run after layout settles
+  let raf = null;
+  function schedule() {
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      raf = null;
+      applyLayout();
+    });
+  }
+
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
+  window.addEventListener('load', schedule);
+  window.addEventListener('resize', schedule);
+</script>
+
+
   </body>
 </html>
