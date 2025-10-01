@@ -1,165 +1,129 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Robbie Dumitru Researcher Profile</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-      <link rel="icon" href="/images/0xADE1A1DE.png">
-      <base rel="noopener noreferrer" target="_blank">
-	</head>
-<!--	<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const button = document.getElementById("toggle-button");
-    const hiddenItems = document.querySelectorAll(".hidden-publication");
-    const heading = document.getElementById("publications-heading");
-    let expanded = false;
+  <head>
+    <title>Robbie Dumitru Researcher Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link to main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="icon" href="images/0xADE1A1DE.png">
+    <base rel="noopener noreferrer" target="_blank">
+  </head>
+  <body>
+    <div class="container">
+      <div class="blurb">
+        <div class="profile-container">
+          <div class="profile-header">
+            <img src="images/mug.jpg" alt="[Me]" style="height:10em;" class="circular">
+            <h1>Robbie Dumitru</h1>
+            <ul>
+              <li><a href="mailto:robert.dumitru@rub.de"> <img class="invert_effect" src="images/email-icon.png" style="height:1.6em;" alt="[Email Icon]"></a></li>
+              <li><a href="https://dblp.org/pid/251/5347-2.html"> <img src="images/dblp.png" style="height:1.3em;" alt="[dblp Icon]"></a></li>
+              <li><a href="https://scholar.google.com.au/citations?user=70aLW-kAAAAJ&hl=en"><img src="images/scholar.png" style="height:1.3em;" alt="[Google Scholar Logo]"></a></li>
+              <li><a href="https://www.linkedin.com/in/robbie-dumitru/"><img src="images/linkedin-logo.png" style="height:1.3em;" alt="[LinkedIn Logo]"></a> </li>
+              <li><a href="https://orcid.org/0000-0001-5605-8082"><img src="images/ORCID.png" style="height:1.3em;" alt="[ORCID Logo]"></a> </li>
+              <li><a href="https://x.com/RobbieDumitru"><img class="invert_effect" src="images/xlogo.png" style="height:1.1em;" alt="[X Logo]"></a> </li>
+            </ul>
+          </div>
+          <div class="profile-info">
+            <p>I am a PhD student at <a href="https://www.ruhr-uni-bochum.de/en">Ruhr University Bochum</a> and <a href="https://www.adelaide.edu.au/">The University of Adelaide</a>. My research interests are in hardware security. Specifically, I investigate side-channel and fault injection security at both the physical layer for ICs and at the lower layers of peripheral communication stacks. In 2020, I earned a B.Eng. (Honours) in Electrical and Electronic Engineering, and a B.Sc. in Mathematical and Computer Sciences from The University of Adelaide.</p>
+          </div>
+        </div>
 
-    button.addEventListener("click", function () {
-      hiddenItems.forEach(item => {
-        item.style.display = expanded ? "none" : "list-item";
-      });
+        <h2> Publications</h2>
 
-      heading.textContent = expanded ? "Featured Publications" : "All Publications";
-	  button.textContent = expanded ? "more" : "less";
-      expanded = !expanded;
-    });
-  });
-	</script>-->
-	<body>
-		<!--<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	!--<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li> --
-    		</ul>
-		</nav> -->
-		<div class="container">
-    		<div class="blurb">
-        		<div class="profile-container">
-				    <div class="profile-header">
-				        <img src="/images/mug.jpg" alt="[Me]" style="height:10em;" class="circular">
-				        <h1>Robbie Dumitru</h1>
-				        <ul>
-				        	<li><a href="mailto:robert.dumitru@rub.de"> <img class="invert_effect" src="/images/email-icon.png" style="height:1.6em;" alt="[Email Icon]"></a></li>
-							<li><a href="https://dblp.org/pid/251/5347-2.html"> <img src="/images/dblp.png" style="height:1.3em;" alt="[dblp Icon]"></a></li>
-				         	<li><a href="https://scholar.google.com.au/citations?user=70aLW-kAAAAJ&hl=en"><img src="/images/scholar.png" style="height:1.3em;" alt="[Google Scholar Logo]"></a></li>
-							<li><a href="https://www.linkedin.com/in/robbie-dumitru/"><img src="/images/linkedin-logo.png" style="height:1.3em;" alt="[LinkedIn Logo]"></a> </li>
-							<li><a href="https://orcid.org/0000-0001-5605-8082"><img src="/images/ORCID.png" style="height:1.3em;" alt="[ORCID Logo]"></a> </li>
-							<li><a href="https://x.com/RobbieDumitru"><img class="invert_effect" src="/images/xlogo.png" style="height:1.1em;" alt="[X Logo]"></a> </li>			
-							</ul>
-				    </div>
-				    <div class="profile-info">
-				        <p>I am a PhD student at <a href="https://www.ruhr-uni-bochum.de/en">Ruhr University Bochum</a> and <a href="https://www.adelaide.edu.au/">The University of Adelaide</a>. My research interests are in hardware security. Specifically, I investigate side-channel and fault injection security at both the physical layer for ICs and at the lower layers of peripheral communication stacks. In 2020, I earned a B.Eng. (Honours) in Electrical and Electronic Engineering, and a B.Sc. in Mathematical and Computer Sciences from The University of Adelaide.</p>
-				    </div>
-				</div>
-            <!--<h2 id="publications-heading"> Featured-->
-<h2> Publications</h2>
+        <ul class="bigFont">
+          <li>
+            <b>
+              <a href="https://arxiv.org/abs/2509.11440" class="no-color-change">
+                Thunderhammer &#8212; Rowhammer Bitflips via PCIe and Thunderbolt (USB&#8209;C)
+              </a>
+            </b><br>
+            <b>Robert&nbsp;Dumitru</b>,
+            <a href="https://stefan1wan.github.io/" style="color:#1F51FF">Junpeng&nbsp;Wan</a>,
+            <a href="https://faculty.cc.gatech.edu/~genkin/" style="color:#1F51FF">Daniel&nbsp;Genkin</a>,
+            Rick&nbsp;Kennell,
+            <a href="https://davejingtian.org/" style="color:#1F51FF">Dave&nbsp;(Jing)&nbsp;Tian</a>,
+            and <a href="https://yuval.yarom.org/" style="color:#1F51FF">Yuval&nbsp;Yarom</a>
+            <br><span class="empty-venue"><em>&nbsp;</em></span>
+            <span style="float:right;">[ <a href="PDFs/DumitruWGKTY25.pdf" style="color:#2989E9">preprint</a> | <a href="https://github.com/0xADE1A1DE/Thunderhammer" style="color:#2989E9">code</a> ]</span>
+          </li>
 
-<ul class="bigFont">
-  <li>
-    <b>
-      <a href="https://arxiv.org/abs/2509.11440" class="no-color-change">
-        Thunderhammer &#8212; Rowhammer Bitflips via PCIe and Thunderbolt (USB&#8209;C)
-      </a>
-    </b><br>
-    <b>Robert&nbsp;Dumitru</b>,
-    <a href="https://stefan1wan.github.io/" style="color:#1F51FF">Junpeng&nbsp;Wan</a>,
-    <a href="https://faculty.cc.gatech.edu/~genkin/" style="color:#1F51FF">Daniel&nbsp;Genkin</a>, 
-    Rick&nbsp;Kennell, 
-    <a href="https://davejingtian.org/" style="color:#1F51FF">Dave&nbsp;(Jing)&nbsp;Tian</a>, 
-    and <a href="https://yuval.yarom.org/" style="color:#1F51FF">Yuval&nbsp;Yarom</a>
-    <br><span class="empty-venue"><em>&nbsp;</em></span>
-    <span style="float:right;">[ <a href="PDFs/DumitruWGKTY25.pdf" style="color:#2989E9">preprint</a> | <a href="https://github.com/0xADE1A1DE/Thunderhammer" style="color:#2989E9">code</a> ]</span>
-  </li>
+          <li>
+			<b>
+				<a href="https://arxiv.org/abs/2504.11633" class="no-color-change">
+				Chypnosis: Undervolting-based Static Side-channel Attacks
+				</a>
+			</b><br>
+			Kyle&nbsp;Mitard, Saleh Monfared, Fatemeh Dana,
+			<b>Robert&nbsp;Dumitru</b>, <a href="https://yuval.yarom.org/" style="color:#1F51FF">Yuval&nbsp;Yarom</a>,
+			and <a href="https://wp.wpi.edu/stajik/" style="color:#1F51FF">Shahin&nbsp;Tajik</a><br>
+			<a href="https://sp2026.ieee-security.org/"><em>IEEE S&amp;P ’26</em></a>
+			
+			<div class="vendor-note"><a href="https://docs.amd.com/r/en-US/000038809/000038809-Design-Advisory-for-Kintex-7-Series-FPGA-and-Artix-7-Series-FPGA-Undervoltage-based-Static-Side-channel-Attacks-Chypnosis" style="color:crimson">AMD Design Advisory</a></div>
+			<div class="vendor-note"><a href="https://www.microchip.com/en-us/solutions/technologies/embedded-security/how-to-report-potential-product-security-vulnerabilities/chypnosis-undervoltage-static-side-channel-attack" style="color:crimson">Microchip PSIRT Advisory</a></div>
+			
+			<span style="float:right;">[ 
+				<a href="PDFs/MitardMDDYT25.pdf" style="color:#2989E9">preprint</a> ]</span>
+		  </li>
 
-  <li>
-    <b>
-      <a href="https://arxiv.org/abs/2504.11633" class="no-color-change">
-        Chypnosis: Undervolting-based Static Side-channel Attacks
-      </a>
-    </b><br>
-    Kyle&nbsp;Mitard, Saleh Monfared, Fatemeh Dana,
-    <b>Robert&nbsp;Dumitru</b>, <a href="https://yuval.yarom.org/" style="color:#1F51FF">Yuval&nbsp;Yarom</a>,
-    and <a href="https://wp.wpi.edu/stajik/" style="color:#1F51FF">Shahin&nbsp;Tajik</a><br>
-    <a href="https://sp2026.ieee-security.org/"><em>IEEE S&amp;P ’26</em></a>
-    <span style="float:right;">[ <a href="PDFs/MitardMDDYT25.pdf" style="color:#2989E9">preprint</a> | <a href="https://docs.amd.com/r/en-US/000038809/000038809-Design-Advisory-for-Kintex-7-Series-FPGA-and-Artix-7-Series-FPGA-Undervoltage-based-Static-Side-channel-Attacks-Chypnosis" style="color:#2989E9">AMD</a> | <a href="https://www.microchip.com/en-us/solutions/technologies/embedded-security/how-to-report-potential-product-security-vulnerabilities/chypnosis-undervoltage-static-side-channel-attack" style="color:#2989E9">Microchip</a> ]</span>
-  </li>
+          <li>
+            <b>
+              <a href="https://www.ndss-symposium.org/ndss-paper/on-borrowed-time-preventing-static-side-channel-analysis/" class="no-color-change">
+                On Borrowed Time — Preventing Static Side-Channel Analysis
+              </a>
+            </b><br>
+            <b>Robert&nbsp;Dumitru</b>,
+            <a href="https://www.thorbenmoos.de/" style="color:#1F51FF">Thorben&nbsp;Moos</a>,
+            Andrew&nbsp;Wabnitz,
+            and <a href="https://yuval.yarom.org/" style="color:#1F51FF">Yuval&nbsp;Yarom</a><br>
+            <a href="https://www.ndss-symposium.org/ndss2025/"><em>NDSS ’25</em></a>
+            <span style="float:right;">[ <a href="PDFs/DumitruMWY24.pdf" style="color:#2989E9">print</a> | <a href="https://www.youtube.com/watch?v=YCwLFmjW3hg" style="color:#2989E9">talk</a> | <a href="https://github.com/0xADE1A1DE/Borrowed-Time" style="color:#2989E9">code</a> ]</span>
+          </li>
 
-  <li>
-    <b>
-      <a href="https://www.ndss-symposium.org/ndss-paper/on-borrowed-time-preventing-static-side-channel-analysis/" class="no-color-change">
-        On Borrowed Time — Preventing Static Side-Channel Analysis
-      </a>
-    </b><br>
-    <b>Robert&nbsp;Dumitru</b>,
-    <a href="https://www.thorbenmoos.de/" style="color:#1F51FF">Thorben&nbsp;Moos</a>,
-    Andrew&nbsp;Wabnitz,
-    and <a href="https://yuval.yarom.org/" style="color:#1F51FF">Yuval&nbsp;Yarom</a><br>
-    <a href="https://www.ndss-symposium.org/ndss2025/"><em>NDSS ’25</em></a>
-    <span style="float:right;">[ <a href="PDFs/DumitruMWY24.pdf" style="color:#2989E9">print</a> | <a href="https://www.youtube.com/watch?v=YCwLFmjW3hg" style="color:#2989E9">talk</a> | <a href="https://github.com/0xADE1A1DE/Borrowed-Time" style="color:#2989E9">code</a> ]</span>
-  </li>
+          <li>
+            <b>
+              <a href="https://www.usenix.org/conference/usenixsecurity23/presentation/dumitru" class="no-color-change">
+                The Impostor Among US(B): Off-Path Injection Attacks on USB Communications
+              </a>
+            </b><br>
+            <b>Robert&nbsp;Dumitru</b>,
+            <a href="https://faculty.cc.gatech.edu/~genkin/" style="color:#1F51FF">Daniel&nbsp;Genkin</a>,
+            Andrew&nbsp;Wabnitz,
+            and <a href="https://yuval.yarom.org/" style="color:#1F51FF">Yuval&nbsp;Yarom</a><br>
+            <a href="https://www.usenix.org/conference/usenixsecurity23"><em>USENIX Security ’23</em></a>
+            <span style="float:right;">[ <a href="PDFs/usenixsecurity23-dumitru.pdf" style="color:#2989E9">print</a> | <a href="https://www.youtube.com/watch?v=qRXE12pnA-A" style="color:#2989E9">talk</a> | <a href="https://github.com/0xADE1A1DE/USB-Injection" style="color:#2989E9">code</a> ]</span>
+          </li>
 
-  <li>
-    <b>
-      <a href="https://www.usenix.org/conference/usenixsecurity23/presentation/dumitru" class="no-color-change">
-        The Impostor Among US(B): Off-Path Injection Attacks on USB Communications
-      </a>
-    </b><br>
-    <b>Robert&nbsp;Dumitru</b>,
-    <a href="https://faculty.cc.gatech.edu/~genkin/" style="color:#1F51FF">Daniel&nbsp;Genkin</a>,
-    Andrew&nbsp;Wabnitz,
-    and <a href="https://yuval.yarom.org/" style="color:#1F51FF">Yuval&nbsp;Yarom</a><br>
-    <a href="https://www.usenix.org/conference/usenixsecurity23"><em>USENIX Security ’23</em></a>
-    <span style="float:right;">[ <a href="PDFs/usenixsecurity23-dumitru.pdf" style="color:#2989E9">print</a> | <a href="https://www.youtube.com/watch?v=qRXE12pnA-A" style="color:#2989E9">talk</a> | <a href="https://github.com/0xADE1A1DE/USB-Injection" style="color:#2989E9">code</a> ]</span>
-  </li>
+          <li>
+            <b>
+              <a href="https://link.springer.com/chapter/10.1007/978-3-031-97620-9_9" class="no-color-change">
+                Reverse-Engineering the Address Translation Caches
+              </a>
+            </b><br>
+            Philipp&nbsp;Ertmer, <b>Robert&nbsp;Dumitru</b>,
+            and <a href="https://yuval.yarom.org/" style="color:#1F51FF">Yuval&nbsp;Yarom</a><br>
+            <a href="https://dimva.org/dimva2025/"><em>DIMVA ’25</em></a>
+            <span style="float:right;">[ <a href="PDFs/978-3-031-97620-9_9.pdf" style="color:#2989E9">print</a> | <a href="https://github.com/0xADE1A1DE/Talbot" style="color:#2989E9">code</a> ]</span>
+          </li>
 
-  <li>
-    <b>
-      <a href="https://link.springer.com/chapter/10.1007/978-3-031-97620-9_9" class="no-color-change">
-        Reverse-Engineering the Address Translation Caches
-      </a>
-    </b><br>
-    Philipp&nbsp;Ertmer, <b>Robert&nbsp;Dumitru</b>,
-    and <a href="https://yuval.yarom.org/" style="color:#1F51FF">Yuval&nbsp;Yarom</a><br>
-    <a href="https://dimva.org/dimva2025/"><em>DIMVA ’25</em></a>
-    <span style="float:right;">[ <a href="PDFs/978-3-031-97620-9_9.pdf" style="color:#2989E9">print</a> | <a href="https://github.com/0xADE1A1DE/Talbot" style="color:#2989E9">code</a> ]</span>
-  </li>
+          <li>
+            <b>
+              <a href="https://dl.acm.org/doi/abs/10.1145/3579375.3579390" class="no-color-change">
+                USB Proxy (extended abstract)
+              </a>
+            </b><br>
+            <b>Robert&nbsp;Dumitru</b>, Mark&nbsp;Beaumont, Bradley&nbsp;Hopkins, and Simon&nbsp;Windows<br>
+            <a href="https://acsw.core.edu.au/"><em>ACSW ’23</em></a>
+            <span style="float:right;">[ <a href="PDFs/DumitruBHW23.pdf" style="color:#2989E9">print</a> ]</span>
+          </li>
+        </ul>
+      </div><!-- /.blurb -->
+    </div><!-- /.container -->
 
-  <li>
-    <b>
-      <a href="https://dl.acm.org/doi/abs/10.1145/3579375.3579390" class="no-color-change">
-        USB Proxy (extended abstract)
-      </a>
-    </b><br>
-    <b>Robert&nbsp;Dumitru</b>, Mark&nbsp;Beaumont, Bradley&nbsp;Hopkins, and Simon&nbsp;Windows<br>
-    <a href="https://acsw.core.edu.au/"><em>ACSW ’23</em></a>
-    <span style="float:right;">[ <a href="PDFs/DumitruBHW23.pdf" style="color:#2989E9">print</a> ]</span>
-  </li>
-</ul>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-<!--		<div class="toggle-publications-wrapper">
-  		<button id="toggle-button" class="h2-style-button">more</button>
-		</div>	-->
-		<!--<button id="toggle-button">More</button>-->
-		<footer>
-    		<ul>
-			<span style="float:right; font-weight:normal;"><em>Last updated September 2025</em></span>
-			</ul>
-		</footer>
-		<script>
-	    	function setWidth() {
-	        const screenWidth = window.screen.width; // Get the device screen width
-	        const websiteWidth = Math.min(screenWidth * 0.618, screenWidth); // 61.8% of screen width
-	        document.body.style.width = `${websiteWidth}px`; // Set the width in pixels
-	        document.body.style.margin = "0 auto"; // Center the website
-	    	}
-
-	    	// Set the width on page load and when the window is resized
-	    	window.addEventListener("load", setWidth);
-	    	window.addEventListener("resize", setWidth);
-		</script>
-	</body>
+    <footer>
+      <ul>
+        <span style="float:right; font-weight:normal;"><em>Last updated October 2025</em></span>
+      </ul>
+    </footer>
+  </body>
 </html>

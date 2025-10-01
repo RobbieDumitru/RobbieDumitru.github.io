@@ -91,9 +91,9 @@ ul.posts { margin: 20px auto 40px; font-size: 1.5em; }
 ul.posts li { list-style: none; }
 
 /* Publications list base styles (apply at all widths) */
-.bigFont { margin: 0; padding: 0; }
+.bigFont { margin: 0 0 0.75em; padding: 0; } /* includes bottom gap before footer */
 .bigFont li {
-  font-size: 1.1em;         /* keep your original scale */
+  font-size: 1.1em;         /* desktop scale */
   line-height: 1.4em;
   position: relative;        /* for desktop absolute actions */
   margin: 0 0 var(--pub-gap);/* uniform gap between papers */
@@ -102,6 +102,13 @@ ul.posts li { list-style: none; }
 
 /* Make sure the last child inside a pub item doesn't add trailing space */
 .bigFont li > *:last-child { margin-bottom: 0 !important; }
+
+/* Hidden venue spacer for items without a real venue line (e.g., Thunderhammer) */
+.empty-venue {
+  visibility: hidden;
+  display: block;
+  height: 1.4em; /* match the venue line height */
+}
 
 /* ---------- Profile ---------- */
 
@@ -189,9 +196,9 @@ img.circular {
 }
 .h2-style-button:hover { text-decoration: underline; opacity: 0.8; }
 
-/* ---------- Desktop (≥ 861px) ---------- */
-/* Keep actions aligned with title; prevent title wrapping; preserve full width for the line */
-@media (min-width: 861px) {
+/* ---------- Desktop (≥ 871px): keep actions aligned with title ---------- */
+
+@media (min-width: 871px) {
   /* Right-hand actions: pin to top-right; do not steal line width */
   li span[style*="float:right;"] {
     position: absolute;
@@ -207,7 +214,36 @@ img.circular {
   }
 }
 
-/* ---------- Mobile (≤ 870px) ---------- */
+/* ---------- “Mobile layout” class (forced by JS when overlap or small width) ---------- */
+/* This is the ONLY place that stacks the publications list. */
+
+body.stacked { margin: 0 auto; width: 95vw; }
+body.stacked .container { width: 95%; max-width: none; margin: 0 auto; }
+
+body.stacked .bigFont li {
+  font-size: 1.0em !important;
+  padding-right: 0 !important;
+  margin: 0 0 var(--pub-gap);
+  line-height: 1.4em;
+}
+body.stacked .bigFont li:last-child { margin-bottom: 0; }
+
+body.stacked li span[style*="float:right;"] {
+  position: static !important;
+  float: none !important;
+  display: block !important;
+  text-align: left;
+  top: auto !important;
+  margin-top: 0.1em;
+  margin-bottom: 0 !important;
+}
+
+body.stacked .bigFont li > *:last-child { margin-bottom: 0 !important; }
+body.stacked .bigFont li p { margin-top: 0.2em; margin-bottom: 0.2em; }
+body.stacked .bigFont li > b { white-space: normal !important; }
+body.stacked .empty-venue { display: none; }  /* no phantom gap for Thunderhammer */
+
+/* ---------- Real mobile (≤ 870px): layout + type only (no publication stacking here) ---------- */
 
 @media (max-width: 870px) {
   /* Layout */
@@ -225,56 +261,15 @@ img.circular {
 
   ul.posts li { list-style: none; }
 
-  /* Publications: full-width text, same gap as desktop via --pub-gap */
-  .bigFont li {
-    font-size: 1.0em !important;    /* your mobile scale */
-    padding-right: 0 !important;     /* no reserved right gutter */
-    margin: 0 0 var(--pub-gap);      /* SAME visual spacing as before */
-    line-height: 1.4em;
-  }
-  .bigFont li:last-child { margin-bottom: 0; }
-
-  /* Actions drop below */
-  li span[style*="float:right;"] {
-    position: static !important;
-    float: none !important;
-    display: block !important;
-    text-align: left;
-    top: auto !important;
-    margin-top: 0.1em;               /* compact */
-    margin-bottom: 0 !important;
-  }
-
-  /* Prevent inner trailing margins from adding extra space */
-  .bigFont li > *:last-child { margin-bottom: 0 !important; }
-
-  /* Slightly tighter paragraph spacing inside items (if any) */
-  .bigFont li p { margin-top: 0.2em; margin-bottom: 0.2em; }
-
-  /* Titles can wrap on small screens */
-  .bigFont li > b { white-space: normal !important; }
+  /* IMPORTANT: publications stay untouched here.
+     Stacking of the publications list is controlled ONLY by body.stacked. */
 }
 
 /* Ensure footer has the same gap above it as between publications */
-.bigFont + footer {
-  margin-top: var(--pub-gap);
-}
+.bigFont + footer { margin-top: var(--pub-gap); }
 
-/* make the gap below the list match the gap between items */
-.bigFont {
-  margin: 0 0 0.75em;   /* bottom margin = item gap */
-  padding: 0;
-}
-
-.empty-venue {
-  visibility: hidden;
-  display: block;
-  height: 1.4em; /* match your line-height */
-}
-
-/* On narrow screens, drop the dummy space entirely */
-@media (max-width: 870px) {
-  .empty-venue {
-    display: none;
-  }
+.vendor-note {
+  color: red;
+  font-weight: bold;
+  margin-top: 0.2em;
 }
