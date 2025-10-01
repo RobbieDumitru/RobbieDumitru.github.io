@@ -127,19 +127,15 @@
     </footer>
 
 <script>
-  // Symmetric, single flip point
-  const BASE_BP = 870; // stack at/under this width; unstack above it (unless overlap)
+  const BASE_BP = 870; // transition point
 
-  // Golden-ratio width based on the *screen* (CSS px), used only for desktop width
   function goldenWidthPx() {
     const sw = window.screen.width;
     return Math.min(sw * 0.618, sw);
   }
 
-  // Test if ANY item truly lacks room for its title + right span.
-  // We compare title's intrinsic width vs available space after the right span.
   function anyOverlapIntrinsic() {
-    // ensure desktop state while measuring
+    // temporarily unstack to measure properly
     document.body.classList.remove('stacked');
 
     for (const li of document.querySelectorAll('.bigFont li')) {
@@ -153,8 +149,8 @@
       const padL = parseFloat(cs.paddingLeft)  || 0;
       const padR = parseFloat(cs.paddingRight) || 0;
 
-      const available = liRect.width - spanRect.width - padL - padR - 4; // cushion
-      const needed    = title.scrollWidth; // intrinsic (no-wrap) width
+      const available = liRect.width - spanRect.width - padL - padR - 4;
+      const needed    = title.scrollWidth;
 
       if (needed > available) return true;
     }
@@ -165,24 +161,22 @@
     const vw      = window.innerWidth;
     const overlap = anyOverlapIntrinsic();
 
-    // Symmetric rule:
+    // single symmetric rule: stack if below breakpoint OR overlap
     const shouldStack = (vw <= BASE_BP) || overlap;
 
     if (shouldStack) {
       document.body.classList.add('stacked');
-      // let CSS control full-width on mobile/stacked
-      document.body.style.width  = '';
-      document.body.style.margin = '';
+      document.body.style.width  = "";
+      document.body.style.margin = "";
     } else {
       document.body.classList.remove('stacked');
-      // desktop: fix width to screen's golden-ratio
       const target = goldenWidthPx();
-      document.body.style.width  = target + 'px';
-      document.body.style.margin = '0 auto';
+      document.body.style.width  = target + "px";
+      document.body.style.margin = "0 auto";
     }
   }
 
-  // Run after layout settles
+  // debounce with rAF
   let raf = null;
   function schedule() {
     if (raf) cancelAnimationFrame(raf);
@@ -193,8 +187,8 @@
   }
 
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
-  window.addEventListener('load', schedule);
-  window.addEventListener('resize', schedule);
+  window.addEventListener("load", schedule);
+  window.addEventListener("resize", schedule);
 </script>
 
 

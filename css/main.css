@@ -1,25 +1,36 @@
 /* ---------- Global ---------- */
 
 :root {
-  --pub-gap: 1.2em; /* gap between publication items */
+  /* controls the vertical gap between publication <li>s */
+  --pub-gap: 1.2em;
 }
 
+/* reset margin/padding first */
 html, body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  margin: 0 auto;          /* center horizontally */
-  padding-top: 55px;       /* vertical spacing at top */
-  width: 61.8%;            /* fallback */
+  /* center horizontally */
+  margin: 0 auto;
+
+  /* create a consistent top gap that doesn’t collapse */
+  padding-top: 0px;        /* adjust as needed (16–24px looks natural) */
+
+  width: 61.8%;
   max-width: 95%;
   color: #222;
   background: #fff;
   font: 100% system-ui;
 }
 
-/* ... keep the rest of your existing CSS unchanged ... */
+/* remove extra margin stacking at the top */
+.container { padding-top: 0; }
+.blurb { margin-top: 0; }
+.profile-container { margin-top: 0; }
+.profile-header { margin-top: 0; }
+
 
 a { color: #0033cc; }
 a.no-color-change { color: inherit; }
