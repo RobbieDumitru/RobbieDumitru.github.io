@@ -6,7 +6,11 @@
 }
 
 body {
-  margin: 55px auto;
+  /* center horizontally */
+  margin: 0 auto;           /* was: 55px auto */
+  /* create the top gap without margin-collapse surprises */
+  padding-top: 55px;        /* moved from margin-top */
+
   width: 61.8%;
   max-width: 95%;
   color: #222;
