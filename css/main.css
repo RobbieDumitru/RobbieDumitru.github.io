@@ -291,3 +291,20 @@ body.stacked .empty-venue { display: none; }  /* no phantom gap for Thunderhamme
   font-weight: bold;
   margin-top: 0.2em;
 }
+
+.vendor-note {
+  color: inherit;   /* normal text color in both light & dark */
+}
+
+.vendor-note a {
+  color: crimson;   /* only links are red */
+  text-decoration: none;
+}
+
+.vendor-note a:hover {
+  text-decoration: underline;
+}
+
+.vendor-note .separator {
+  color: inherit;   /* inherits from body, switches automatically in dark mode */
+}
