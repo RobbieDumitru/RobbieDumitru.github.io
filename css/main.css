@@ -224,6 +224,12 @@ img.circular {
 /* ---------- Desktop (≥ 871px): keep actions aligned with title ---------- */
 
 @media (min-width: 871px) {
+  /* Reserve one uniform right-hand gutter for ALL publication text, sized to the
+     widest actions block (the "[ print | talk | code ]" case). JS refines
+     --action-gutter to the measured max width; 12em is the pre-JS fallback. */
+  .bigFont { --action-gutter: 12em; }
+  .bigFont li { padding-right: var(--action-gutter); }
+
   /* Right-hand actions: pin to top-right; do not steal line width */
   li span[style*="float:right;"] {
     position: absolute;
@@ -279,10 +285,11 @@ body.stacked .empty-venue { display: none; }  /* no phantom gap for Thunderhamme
   body p { font-size: 1.1em; line-height: 1.3em; }
 
   /* Profile stacking */
-  .profile-container { flex-direction: column; align-items: center; gap: 0 !important; }
+  .profile-container { flex-direction: column; align-items: center; gap: 0 !important; margin-bottom: 0; }
+  .profile-container + h2 { margin-top: 1.5em; } /* match the gap between the awards list and the next heading */
   .profile-header { margin-bottom: 0; }
   .profile-info { text-align: left; margin-top: 20px !important; }
-  .profile-info p { margin-top: 0; }
+  .profile-info p { margin-top: 0; margin-bottom: 0; font-size: 1.05em; }
 
   ul.posts li { list-style: none; }
 
@@ -292,6 +299,9 @@ body.stacked .empty-venue { display: none; }  /* no phantom gap for Thunderhamme
 
 /* Ensure footer has the same gap above it as between publications */
 .bigFont + footer { margin-top: var(--pub-gap); }
+
+/* "Other Publications" heading: match the breathing room above the first heading */
+.bigFont + h2 { margin-top: 1.5em; }
 
 .vendor-note {
   color: red;
